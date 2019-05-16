@@ -71,5 +71,5 @@ class Profile(models.Model, ModelMixin):
     only_matche = models.BooleanField(verbose_name='不让为匹配的人看我的相册', default=True)
     auto_play = models.BooleanField(verbose_name='自动播放视频', default=True)
 
-    class _Meta:
+    class Meta:
         db_table = 'profile'

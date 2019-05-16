@@ -38,4 +38,4 @@ def send_vcode(phone):
             return True, 'OK'
     else:
         # 通信错误
-        return render_json(code=errors.SMS_SERVER_ERROR, data='访问短信服务平台异常')
+        return render_json(code=errors.SmsServerError, data='访问短信服务平台异常')

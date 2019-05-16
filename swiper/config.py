@@ -15,3 +15,6 @@ YZX_PARAMS = {
 QN_AK = 'CrP2z-LZ7wEs2DtK5HrqcisdP53yU1tGtAwjFN_p'
 QN_SK = 'lSaA6lKPHA7Y5V1QrgJdt3ewL4oMBqGZx06b6SBc'
 QN_BUCKET = 'sz1812'
+
+# 每日最大返回次数
+REWIND_TIMES = 3

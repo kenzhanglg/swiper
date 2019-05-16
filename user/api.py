@@ -25,9 +25,10 @@ def submit_phonenum(request):
         # else:
         #     return render_json(code=errors.SMS_ERROR, data=msg)
         send_vcode.delay(phone)
-        return render_json()
+        # print(send_vcode(phone))
+        return render_json(data='Ok')
     else:
-        return render_json(code=errors.PhoneNum_Empty, data='手机号码不能为空')
+        raise errors.PhoneNumEmpty()
 
 
 def submit_vcode(request):
@@ -44,7 +45,7 @@ def submit_vcode(request):
         print(user.to_dict())
         return render_json(code=0, data=user.to_dict())
     else:
-        return render_json(code=errors.VCODE_ERROR, data='验证码错误')
+        raise errors.VcodeError()
 
 
 def get_profile(request):
@@ -75,7 +76,7 @@ def edit_profile(request):
         profile.id = request.session['uid']
         profile.save()
         return render_json(code=0, data=profile.to_dict())
-    return render_json(code=errors.PROFILE_ERROR, data=form.errors)
+    return render_json(code=errors.ProfileError, data=form.errors)
 
 
 def upload_avatar(request):
